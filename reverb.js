@@ -151,6 +151,10 @@ Reverb.API = function(options) {
   function listingsRelatedToArticle(slug, queryOptions) {
     return get("articles/" + slug + "/related-listings", queryOptions);
   }
+  
+  function searchAutosuggest(query, queryOptions) {
+    return get("autosuggest?query="+encodeURIComponent(query), queryOptions);
+  }
 
   return {
     handpicked: handpicked,
@@ -158,7 +162,8 @@ Reverb.API = function(options) {
     searchListings: searchListings,
     searchPriceguide: searchPriceguide,
     listingsRelatedToArticle: listingsRelatedToArticle,
-    searchAffiliate: searchAffiliate
+    searchAffiliate: searchAffiliate,
+    searchAutosuggest: searchAutosuggest
   }
 
 };
